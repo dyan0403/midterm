@@ -51,3 +51,4 @@ comparator_factory.py: store class ComparatorFactory
 
 main.py: tool's command lines 
 
+test.txt: test program with 2 code example 
