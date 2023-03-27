@@ -11,7 +11,7 @@ class Preprocessor:
 
 # Định nghĩa lớp PythonPreprocessor, kế thừa từ lớp Preprocessor
 class PythonPreprocessor(Preprocessor):
-    PYTHON_KEYWORDS = {"True", "try", "while", "with", "yield"}   # Khởi tạo tập hợp các từ khóa của Python
+    PYTHON_KEYWORDS = ["class", "def", "if", "else", "is", "not", "for", "while", "import", "print", "True", "False", "and", "or", "as", "assert", "await", "async", "del", "elif", "break", "continue", "except", "finally", "from", "global", "in", "lambda", "nonlocal", "pass", "raise", "try", "with", "yield"]   # Khởi tạo tập hợp các từ khóa của Python
 
     # Overwrite lại phương thức preprocess của lớp cha để tiền xử lý đoạn code Python
     def preprocess(self, code: str) -> str:
@@ -25,7 +25,7 @@ class PythonPreprocessor(Preprocessor):
 
 # Định nghĩa lớp JavaPreprocessor, kế thừa từ lớp Preprocessor
 class JavaPreprocessor(Preprocessor):
-    JAVA_KEYWORDS = {"try", "void", "volatile", "while"}   # Khởi tạo tập hợp các từ khóa của Java
+    JAVA_KEYWORDS = ["abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class", "const", "continue", "default", "do", "double", "else", "enum", "extends", "final", "finally", "float", "for", "goto", "if", "implements", "import", "instanceof", "int", "interface", "long", "native", "new", "package", "private", "protected", "public", "return", "short", "static", "strictfp", "super", "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", "volatile", "while"]   # Khởi tạo tập hợp các từ khóa của Java
 
     # Overwrite lại phương thức preprocess của lớp cha để tiền xử lý đoạn code Java
     def preprocess(self, code: str) -> str:   
@@ -39,7 +39,7 @@ class JavaPreprocessor(Preprocessor):
 
 # Định nghĩa lớp CppPreprocessor, kế thừa từ lớp Preprocessor
 class CppPreprocessor(Preprocessor):
-    CPP_KEYWORDS = {"alignas", "alignof", "and"}   # Khởi tạo tập hợp các từ khóa của C++
+    CPP_KEYWORDS = ["and", "and_eq", "asm", "auto", "bitand", "bitor", "bool", "break", "case", "catch", "char", "class", "compl", "const", "const_cast", "continue", "default", "delete", "do", "double", "dynamic_cast", "else", "enum", "explicit", "export", "extern", "false", "float", "for", "friend", "goto", "if", "inline", "int", "long", "mutable", "namespace", "new", "not", "not_eq", "operator", "or", "or_eq", "private", "protected", "public", "register", "reinterpret_cast", "return", "short", "signed", "sizeof", "static", "static_cast", "struct", "switch", "template", "this", "throw", "true", "try", "typedef", "typeid", "typename", "union", "unsigned", "using", "virtual", "void", "volatile", "wchar_t", "while", "xor", "xor_eq"]   # Khởi tạo tập hợp các từ khóa của C++
 
     # Overwrite lại phương thức preprocess của lớp cha để tiền xử lý đoạn code C++
     def preprocess(self, code: str) -> str:
