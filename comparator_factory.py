@@ -3,7 +3,7 @@ from comparator import CodeComparator
 
 
 class ComparatorFactory:   #Factory Pattern (Mẫu Factory), được sử dụng để tạo ra các đối tượng tùy theo điều kiện đầu vào
-    SUPPORTED_LANGUAGES = {"python", "java", "cpp"}
+    SUPPORTED_LANGUAGES = {"python", "java", "c++"}
 
     @staticmethod 
     def is_supported_language(language: str) -> bool:     #nhận vào một string language và trả về True nếu language được hỗ trợ và False nếu ngược lại. Để kiểm tra xem một ngôn ngữ có được hỗ trợ hay không, method này so sánh language với tập hợp các ngôn ngữ được hỗ trợ đã được định nghĩa trong SUPPORTED_LANGUAGES
@@ -18,7 +18,7 @@ class ComparatorFactory:   #Factory Pattern (Mẫu Factory), được sử dụn
             preprocessor = PythonPreprocessor()
         elif language == "java":
             preprocessor = JavaPreprocessor()   #tạo instance tương ứng mỗi class ngôn ngữ
-        elif language == "cpp":
+        elif language == "c++":
             preprocessor = CppPreprocessor()
 
         return CodeComparator(code1, code2, preprocessor)     # Trả về instance của CodeComparator với đoạn code và preprocessor đã được tiền xử lí
